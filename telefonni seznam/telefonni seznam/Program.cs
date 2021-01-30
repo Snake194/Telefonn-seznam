@@ -37,7 +37,6 @@ namespace telefonni_seznam
         {
             Console.WriteLine(StringToPrint);
         }
-
         static void Main(string[] args)
         {
             int menu,count = 0;
@@ -55,12 +54,12 @@ namespace telefonni_seznam
                 {
                     kontakt[count] = addNewName();
                     number[count] = addNewNumber();
-                    count = +1;
+                    count = count + 1;
                 }
             } while (menu != 0);
 
-            string[] kontakty = kontakt.Distinct().ToArray();
-            string[] numbers = number.Distinct().ToArray();
+            string[] kontakty = kontakt.Take(count).Distinct().ToArray();
+            string[] numbers = number.Take(count).Distinct().ToArray();
             foreach (var s in kontakty)
             {
                 Console.WriteLine(s);
