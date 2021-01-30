@@ -38,7 +38,18 @@ namespace telefonni_seznam
                 return -1;
             }
         }
-        
+        static List<User> createUserListCopy(List<User> users)
+        {
+            var tempUsers = new List<User>();
+            foreach (var user in users)
+            {
+                var u = new User();
+                u.number = user.number;
+                u.surname = user.surname;
+                tempUsers.Add(u);
+            }
+            return tempUsers;
+        }
         static void printUserList(List<User> userList)
         {
             for (int i = 0; i < userList.Count; i++)
@@ -83,6 +94,11 @@ namespace telefonni_seznam
 
                     case 2: // print USERS in origin order
                         printUserList(users);
+                        break;
+
+                    case 3: // sort by surname
+                        List<User> tempUsers = createUserListCopy(users);
+                        printUserList(tempUsers);
                         break;
 
                     default:
