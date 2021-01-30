@@ -39,7 +39,14 @@ namespace telefonni_seznam
             }
         }
         
-
+        static void printUserList(List<User> userList)
+        {
+            for (int i = 0; i < userList.Count; i++)
+            {
+                User user = userList[i];
+                print(i + 1 + ". " + user.surname + ": " + user.number);
+            }
+        }
         static string addNewName()
         {
             print("Zadejte jméno nového kontaktu:");
@@ -73,12 +80,9 @@ namespace telefonni_seznam
                         u.surname = addNewName();
                         users.Add(u);
                         break;
+
                     case 2: // print USERS in origin order
-                        for (int i = 0; i < users.Count; i++)
-                        {
-                            User user = users[i];
-                            print(i + 1 + ". " + user.surname + ": " + user.number);
-                        }
+                        printUserList(users);
                         break;
 
                     default:
@@ -87,7 +91,7 @@ namespace telefonni_seznam
                 }
                 Console.ReadKey();
             } while (menu != 0);
-            Console.WriteLine(users[0].number + " - " + users[0].surname);
+            //Console.WriteLine(users[0].number + " - " + users[0].surname);
             Console.ReadKey();
         }
     }
