@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace telefonni_seznam
 {
+    public class User
+    {
+        public string number { get; set; }
+        public string surname { get; set; }
+    }
     class Program
     {
         static int menuVolba()
@@ -18,6 +23,7 @@ namespace telefonni_seznam
             int menu = int.Parse(Console.ReadLine());
             return menu;
         }
+        
 
         static string addNewName()
         {
@@ -39,36 +45,21 @@ namespace telefonni_seznam
         }
         static void Main(string[] args)
         {
-            int menu,count = 0;
-            const int numberOfUsers = 1000;
-            string[] kontakt = new string[numberOfUsers];
-            string[] number = new string[numberOfUsers];
-            for (int i = 0; i < numberOfUsers; i++)
-            {
-                number[i] = "0";
-                kontakt[i] = "0";
-            }
+            int menu;
+            var users = new List<User>();
             do {
                 Console.Clear();
                 menu = menuVolba();
                 if (menu == 1)
                 {
-                    kontakt[count] = addNewName();
-                    number[count] = addNewNumber();
-                    count = count + 1;
+                    //var u = new User() { surname = addNewName(), number = addNewNumber() }
+                    var u = new User();
+                    u.number = addNewNumber();
+                    u.surname = addNewName();
+                    users.Add(u);
                 }
             } while (menu != 0);
-
-            string[] kontakty = kontakt.Take(count).Distinct().ToArray();
-            string[] numbers = number.Take(count).Distinct().ToArray();
-            foreach (var s in kontakty)
-            {
-                Console.WriteLine(s);
-            }
-            foreach (var s in numbers)
-            {
-                Console.WriteLine(s);
-            }
+            Console.WriteLine(users[0].number + " - " + users[0].surname);
             Console.ReadKey();
         }
     }
