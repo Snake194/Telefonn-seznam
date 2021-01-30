@@ -8,7 +8,7 @@ namespace telefonni_seznam
 {
     class Program
     {
-        static void print(string StringToPrint = "Neni definovana funkce")
+        static void print(string StringToPrint = "Není definovaná funkce")
         {
             Console.WriteLine(StringToPrint);
         }
@@ -24,21 +24,18 @@ namespace telefonni_seznam
             do
             {
                 Console.Clear();
-                print("Vitejte v menu telefonniho seznamu.");
-                print("Nyni si v nasem menu vyberte jakou operaci chcete provest.");
-                print("---------------------------------------------------------------------------");
-                print("Pro vlozeni noveho kontaktu(jmeno + cislo) stisknete : 1");
-                print("Pro serazeni seznamu stisknete : 2"); //potom  udelat jestli chce serazeni podle tel.cisla nebo jmena
-                print("Pro hledani ulozenych kontaktu stisknete : 3"); //potom  udelat jestli chce hledani podle tel.cisla nebo jmena
-                print("Pro ukonceni programu stisknete : 4");
+                print("Pro vložení nového kontaktu(jméno + číslo) stiskněte : 1");
+                print("Pro seřazení seznamu stiskněte : 2"); //potom  udelat jestli chce serazeni podle tel.cisla nebo jmena
+                print("Pro hledání uložených kontaktů stiskněte : 3"); //potom  udelat jestli chce hledani podle tel.cisla nebo jmena
+                print("Pro ukončení programu stiskněte : 4");
                 menu = int.Parse(Console.ReadLine());
                 if (menu == 1)
                 {
-                    print("Zadejte jmeno noveho kontaktu:");
+                    print("Zadejte jméno nového kontaktu:");
                     string new_kontakt = Console.ReadLine();
                     kontakt[count] = new_kontakt;
                     count=+ 1;
-                    print("Zatejte telefonni cislo kontaktu:");
+                    print("Zadejte telefonní číslo kontaktu:");
                 }
             }
             while (menu != 4);
