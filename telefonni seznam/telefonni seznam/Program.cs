@@ -16,7 +16,7 @@ namespace telefonni_seznam
         static int menuVolba()
         {
             print("     1 - Vložení nového kontaktu(jméno + číslo)");
-            print("     2 - Vypsání seznamu jak byl zadán");
+            print("     2 - Vypsání seznamu");
             print("     3 - Vypsání seznamu dle příjmení");
             print("     4 - Vypsání seznamu dle čísla");
             print("     5 - Hledání v uložených kontaktech");
@@ -69,7 +69,11 @@ namespace telefonni_seznam
                         users.Add(u);
                         break;
                     case 2: // print USERS in origin order
-
+                        for (int i = 0; i < users.Count; i++)
+                        {
+                            User user = users[i];
+                            print(i + 1 + ". " + user.surname + ": " + user.number);
+                        }
                         break;
 
                     default:
