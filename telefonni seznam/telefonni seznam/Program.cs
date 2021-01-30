@@ -8,7 +8,7 @@ namespace telefonni_seznam
 {
     class Program
     {
-        static void print(string StringToPrint = "Není definovaná funkce")
+        static void print(string StringToPrint = " ")
         {
             Console.WriteLine(StringToPrint);
         }
