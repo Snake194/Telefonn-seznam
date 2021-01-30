@@ -1,0 +1,7 @@
+D:\C# - VT\telefonni seznam\telefonni seznam\bin\Debug\telefonni seznam.exe.config
+D:\C# - VT\telefonni seznam\telefonni seznam\bin\Debug\telefonni seznam.exe
+D:\C# - VT\telefonni seznam\telefonni seznam\bin\Debug\telefonni seznam.pdb
+D:\C# - VT\telefonni seznam\telefonni seznam\obj\Debug\telefonni seznam.csprojAssemblyReference.cache
+D:\C# - VT\telefonni seznam\telefonni seznam\obj\Debug\telefonni seznam.csproj.CoreCompileInputs.cache
+D:\C# - VT\telefonni seznam\telefonni seznam\obj\Debug\telefonni seznam.exe
+D:\C# - VT\telefonni seznam\telefonni seznam\obj\Debug\telefonni seznam.pdb

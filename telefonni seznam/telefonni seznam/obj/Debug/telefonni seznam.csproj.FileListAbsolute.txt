@@ -5,3 +5,10 @@ D:\C# - VT\telefonni seznam\telefonni seznam\obj\Debug\telefonni seznam.csprojAs
 D:\C# - VT\telefonni seznam\telefonni seznam\obj\Debug\telefonni seznam.csproj.CoreCompileInputs.cache
 D:\C# - VT\telefonni seznam\telefonni seznam\obj\Debug\telefonni seznam.exe
 D:\C# - VT\telefonni seznam\telefonni seznam\obj\Debug\telefonni seznam.pdb
+C:\Users\kesna\Desktop\telefonni seznam\telefonni seznam\bin\Debug\telefonni seznam.exe.config
+C:\Users\kesna\Desktop\telefonni seznam\telefonni seznam\bin\Debug\telefonni seznam.exe
+C:\Users\kesna\Desktop\telefonni seznam\telefonni seznam\bin\Debug\telefonni seznam.pdb
+C:\Users\kesna\Desktop\telefonni seznam\telefonni seznam\obj\Debug\telefonni seznam.csprojAssemblyReference.cache
+C:\Users\kesna\Desktop\telefonni seznam\telefonni seznam\obj\Debug\telefonni seznam.csproj.CoreCompileInputs.cache
+C:\Users\kesna\Desktop\telefonni seznam\telefonni seznam\obj\Debug\telefonni seznam.exe
+C:\Users\kesna\Desktop\telefonni seznam\telefonni seznam\obj\Debug\telefonni seznam.pdb

@@ -63,7 +63,7 @@ namespace telefonni_seznam
             print("Zadejte jméno nového kontaktu:");
             string newContact = Console.ReadLine();
             return newContact;
-           
+
         }
 
         static string addNewNumber()
@@ -80,7 +80,8 @@ namespace telefonni_seznam
         {
             int menu;
             var users = new List<User>();
-            do {
+            do
+            {
                 Console.Clear();
                 menu = menuVolba();
                 switch (menu)
@@ -101,6 +102,12 @@ namespace telefonni_seznam
                         //users.Sort((u1, u2) => u1.LastName.CompareTo(u2.LastName));
                         tempUsers.Sort((u1, u2) => u1.surname.CompareTo(u2.surname));
                         printUserList(tempUsers);
+                        break;
+                    case 4:
+                        List<User> tempnum = createUserListCopy(users);
+                        //users.Sort((u1, u2) => u1.LastName.CompareTo(u2.LastName));
+                        tempnum.Sort((u1, u2) => u1.number.CompareTo(u2.number));
+                        printUserList(tempnum);
                         break;
 
                     default:
