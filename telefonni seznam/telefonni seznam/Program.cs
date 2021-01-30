@@ -22,10 +22,15 @@ namespace telefonni_seznam
             print("     5 - Hledání v uložených kontaktech");
             print("----------------------------------------------------------");
             print("     0 - Ukončení programu");
-            Char menu = char.Parse(Console.ReadLine());
-            if (Char.IsDigit(menu))
+            string menu = Console.ReadLine();
+            if (menu.Length != 1)
             {
-                int i = (int)Char.GetNumericValue(menu);
+                return -1;
+            }
+            char menuChar = char.Parse(menu);
+            if (Char.IsDigit(menuChar))
+            {
+                int i = (int)Char.GetNumericValue(menuChar);
                 return i;
             }
             else
