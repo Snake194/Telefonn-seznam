@@ -24,10 +24,11 @@ namespace telefonni_seznam
             do
             {
                 Console.Clear();
-                print("Pro vložení nového kontaktu(jméno + číslo) stiskněte : 1");
-                print("Pro seřazení seznamu stiskněte : 2"); //potom  udelat jestli chce serazeni podle tel.cisla nebo jmena
-                print("Pro hledání uložených kontaktů stiskněte : 3"); //potom  udelat jestli chce hledani podle tel.cisla nebo jmena
-                print("Pro ukončení programu stiskněte : 4");
+                print("     1 - Vložení nového kontaktu(jméno + číslo)");
+                print("     2 - Seřazení seznamu"); //potom  udelat jestli chce serazeni podle tel.cisla nebo jmena
+                print("     3 - Hledání v uložených kontaktech"); //potom  udelat jestli chce hledani podle tel.cisla nebo jmena
+                print("----------------------------------------------------------");
+                print("     4 - Ukončení programu");
                 menu = int.Parse(Console.ReadLine());
                 if (menu == 1)
                 {
