@@ -8,16 +8,9 @@ namespace telefonni_seznam
 {
     class Program
     {
-       // static void menuVolba(string a = )
-        //{
-            
-
-
-        //}
         static void print(string StringToPrint = "Neni definovana funkce")
         {
             Console.WriteLine(StringToPrint);
-            //return StringToPrint;()
         }
 
         static void Main(string[] args)
@@ -30,7 +23,7 @@ namespace telefonni_seznam
             }
             do
             {
-               // Console.Clear();
+                Console.Clear();
                 print("Vitejte v menu telefonniho seznamu.");
                 print("Nyni si v nasem menu vyberte jakou operaci chcete provest.");
                 print("---------------------------------------------------------------------------");
