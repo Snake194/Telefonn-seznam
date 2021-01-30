@@ -18,6 +18,21 @@ namespace telefonni_seznam
             int menu = int.Parse(Console.ReadLine());
             return menu;
         }
+
+        static string addNewName()
+        {
+            print("Zadejte jméno nového kontaktu:");
+            string newContact = Console.ReadLine();
+            return newContact;
+           
+        }
+
+        static string addNewNumber()
+        {
+            print("Zadejte telefonní číslo kontaktu:");
+            string newNumber = Console.ReadLine();
+            return newNumber;
+        }
         static void print(string StringToPrint = " ")
         {
             Console.WriteLine(StringToPrint);
@@ -27,8 +42,10 @@ namespace telefonni_seznam
         {
             int menu,count = 0;
             string[] kontakt = new string[1000];
+            string[] number = new string[1000];
             for (int i = 0; i < 1000; i++)
             {
+                number[i] = "0";
                 kontakt[i] = "0";
             }
             do {
@@ -36,15 +53,19 @@ namespace telefonni_seznam
                 menu = menuVolba();
                 if (menu == 1)
                 {
-                    print("Zadejte jméno nového kontaktu:");
-                    string new_kontakt = Console.ReadLine();
-                    kontakt[count] = new_kontakt;
-                    count=+ 1;
-                    print("Zadejte telefonní číslo kontaktu:");
+                    kontakt[count] = addNewName();
+                    number[count] = addNewNumber();
+                    count = +1;
                 }
             } while (menu != 0);
+
             string[] kontakty = kontakt.Distinct().ToArray();
+            string[] numbers = number.Distinct().ToArray();
             foreach (var s in kontakty)
+            {
+                Console.WriteLine(s);
+            }
+            foreach (var s in numbers)
             {
                 Console.WriteLine(s);
             }
