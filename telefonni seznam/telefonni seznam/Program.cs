@@ -16,20 +16,21 @@ namespace telefonni_seznam
         static int menuVolba()
         {
             print("     1 - Vložení nového kontaktu(jméno + číslo)");
-            print("     2 - Seřazení seznamu"); //potom  udelat jestli chce serazeni podle tel.cisla nebo jmena
-            print("     3 - Hledání v uložených kontaktech"); //potom  udelat jestli chce hledani podle tel.cisla nebo jmena
+            print("     2 - Vypsání seznamu jak byl zadán");
+            print("     3 - Vypsání seznamu dle příjmení");
+            print("     4 - Vypsání seznamu dle čísla");
+            print("     5 - Hledání v uložených kontaktech");
             print("----------------------------------------------------------");
             print("     0 - Ukončení programu");
-            string menu = Console.ReadLine();
-            switch (menu)
+            Char menu = char.Parse(Console.ReadLine());
+            if (Char.IsDigit(menu))
             {
-                case "1":
-                case "2":
-                case "3":
-                case "0":
-                    return Int32.Parse(menu);
-                default:
-                    return -1;
+                int i = (int)Char.GetNumericValue(menu);
+                return i;
+            }
+            else
+            {
+                return -1;
             }
         }
         
@@ -61,12 +62,14 @@ namespace telefonni_seznam
                 menu = menuVolba();
                 switch (menu)
                 {
-                    case 1:
-                        //var u = new User() { surname = addNewName(), number = addNewNumber() }
+                    case 1: // ADD USER
                         var u = new User();
                         u.number = addNewNumber();
                         u.surname = addNewName();
                         users.Add(u);
+                        break;
+                    case 2: // print USERS in origin order
+
                         break;
 
                     default:
