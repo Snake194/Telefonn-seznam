@@ -20,8 +20,17 @@ namespace telefonni_seznam
             print("     3 - Hledání v uložených kontaktech"); //potom  udelat jestli chce hledani podle tel.cisla nebo jmena
             print("----------------------------------------------------------");
             print("     0 - Ukončení programu");
-            int menu = int.Parse(Console.ReadLine());
-            return menu;
+            string menu = Console.ReadLine();
+            switch (menu)
+            {
+                case "1":
+                case "2":
+                case "3":
+                case "0":
+                    return Int32.Parse(menu);
+                default:
+                    return -1;
+            }
         }
         
 
@@ -50,14 +59,21 @@ namespace telefonni_seznam
             do {
                 Console.Clear();
                 menu = menuVolba();
-                if (menu == 1)
+                switch (menu)
                 {
-                    //var u = new User() { surname = addNewName(), number = addNewNumber() }
-                    var u = new User();
-                    u.number = addNewNumber();
-                    u.surname = addNewName();
-                    users.Add(u);
+                    case 1:
+                        //var u = new User() { surname = addNewName(), number = addNewNumber() }
+                        var u = new User();
+                        u.number = addNewNumber();
+                        u.surname = addNewName();
+                        users.Add(u);
+                        break;
+
+                    default:
+                        Console.WriteLine("Neznámý příkaz: {0}", menu);
+                        break;
                 }
+                Console.ReadKey();
             } while (menu != 0);
             Console.WriteLine(users[0].number + " - " + users[0].surname);
             Console.ReadKey();
