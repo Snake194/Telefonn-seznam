@@ -40,9 +40,10 @@ namespace telefonni_seznam
         static void Main(string[] args)
         {
             int menu,count = 0;
-            string[] kontakt = new string[1000];
-            string[] number = new string[1000];
-            for (int i = 0; i < 1000; i++)
+            const int numberOfUsers = 1000;
+            string[] kontakt = new string[numberOfUsers];
+            string[] number = new string[numberOfUsers];
+            for (int i = 0; i < numberOfUsers; i++)
             {
                 number[i] = "0";
                 kontakt[i] = "0";
