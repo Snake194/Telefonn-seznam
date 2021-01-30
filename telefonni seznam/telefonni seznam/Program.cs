@@ -98,6 +98,8 @@ namespace telefonni_seznam
 
                     case 3: // sort by surname
                         List<User> tempUsers = createUserListCopy(users);
+                        //users.Sort((u1, u2) => u1.LastName.CompareTo(u2.LastName));
+                        tempUsers.Sort((u1, u2) => u1.surname.CompareTo(u2.surname));
                         printUserList(tempUsers);
                         break;
 
