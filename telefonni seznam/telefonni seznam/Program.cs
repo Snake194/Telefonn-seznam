@@ -28,7 +28,7 @@ namespace telefonni_seznam
                 print("     2 - Seřazení seznamu"); //potom  udelat jestli chce serazeni podle tel.cisla nebo jmena
                 print("     3 - Hledání v uložených kontaktech"); //potom  udelat jestli chce hledani podle tel.cisla nebo jmena
                 print("----------------------------------------------------------");
-                print("     4 - Ukončení programu");
+                print("     0 - Ukončení programu");
                 menu = int.Parse(Console.ReadLine());
                 if (menu == 1)
                 {
@@ -39,7 +39,7 @@ namespace telefonni_seznam
                     print("Zadejte telefonní číslo kontaktu:");
                 }
             }
-            while (menu != 4);
+            while (menu != 0);
             string[] kontakty = kontakt.Distinct().ToArray();
             foreach (var s in kontakty)
             {
