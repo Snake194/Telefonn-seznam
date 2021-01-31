@@ -74,8 +74,28 @@ namespace telefonni_seznam
 
         static string inputNumber()
         {
-            print("Zadejte telefonní číslo:");
-            string Number = Console.ReadLine();
+            string Number;
+            bool inputIsCorect = false;
+            do
+            {
+                print("Zadejte telefonní číslo:");
+                print("----------------------------------------------------------");
+                Number = Console.ReadLine();
+                for (int i = 0; i < Number.Length; i++)
+                {
+                    char c = Number[i];
+                    if (Char.IsDigit(c) == false)
+                    {
+                        print("Špatný vstup - očekávám číslo, zadej znovu.");
+                        inputIsCorect = false;
+                        break;
+                    }
+                    else
+                    {
+                        inputIsCorect = true;
+                    }
+                }
+            } while (!inputIsCorect);
             return Number;
         }
         static void print(string StringToPrint = " ")
