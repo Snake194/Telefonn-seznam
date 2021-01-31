@@ -15,6 +15,7 @@ namespace telefonni_seznam
     {
         static int menuVolba()
         {
+            print("----------------------------------------------------------");
             print("     1 - Vložení nového kontaktu(jméno + číslo)");
             print("     2 - Vypsání seznamu");
             print("     3 - Vypsání seznamu dle příjmení");
@@ -127,6 +128,24 @@ namespace telefonni_seznam
                             foreach (var findedUser in findedUsers)
                             {
                                 print("Nalezen: " + findedUser.surname + " - " + findedUser.number);
+                            }
+                        }
+                        break;
+
+                    case 6: // search by surname
+                        string numberToFind = inputNumber();
+                        var findedNums = from u in users
+                                          where u.surname == numberToFind
+                                          select u;
+                        if (findedNums.Count() < 1)
+                        {
+                            print("Číslo nenalezeno!");
+                        }
+                        else
+                        {
+                            foreach (var findedNum in findedNums)
+                            {
+                                print("Nalezeno: " + findedNum.number + " - " + findedNum.surname);
                             }
                         }
                         break;
