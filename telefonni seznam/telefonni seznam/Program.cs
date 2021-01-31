@@ -19,7 +19,8 @@ namespace telefonni_seznam
             print("     2 - Vypsání seznamu");
             print("     3 - Vypsání seznamu dle příjmení");
             print("     4 - Vypsání seznamu dle čísla");
-            print("     5 - Hledání v uložených kontaktech");
+            print("     5 - Hledání v uložených kontaktech dle jména");
+            print("     6 - Hledání v uložených kontaktech dle čísla");
             print("----------------------------------------------------------");
             print("     0 - Ukončení programu");
             string menu = Console.ReadLine();
@@ -58,7 +59,7 @@ namespace telefonni_seznam
                 print(i + 1 + ". " + user.surname + ": " + user.number);
             }
         }
-        static string addNewName()
+        static string getNewName()
         {
             print("Zadejte jméno nového kontaktu:");
             string newContact = Console.ReadLine();
@@ -66,7 +67,7 @@ namespace telefonni_seznam
 
         }
 
-        static string addNewNumber()
+        static string getNewNumber()
         {
             print("Zadejte telefonní číslo kontaktu:");
             string newNumber = Console.ReadLine();
@@ -88,8 +89,8 @@ namespace telefonni_seznam
                 {
                     case 1: // ADD USER
                         var u = new User();
-                        u.number = addNewNumber();
-                        u.surname = addNewName();
+                        u.number = getNewNumber();
+                        u.surname = getNewName();
                         users.Add(u);
                         break;
 
@@ -99,13 +100,11 @@ namespace telefonni_seznam
 
                     case 3: // sort by surname
                         List<User> tempUsers = createUserListCopy(users);
-                        //users.Sort((u1, u2) => u1.LastName.CompareTo(u2.LastName));
                         tempUsers.Sort((u1, u2) => u1.surname.CompareTo(u2.surname));
                         printUserList(tempUsers);
                         break;
                     case 4:
                         List<User> tempnum = createUserListCopy(users);
-                        //users.Sort((u1, u2) => u1.LastName.CompareTo(u2.LastName));
                         tempnum.Sort((u1, u2) => u1.number.CompareTo(u2.number));
                         printUserList(tempnum);
                         break;
@@ -117,7 +116,7 @@ namespace telefonni_seznam
                 Console.ReadKey();
             } while (menu != 0);
             //Console.WriteLine(users[0].number + " - " + users[0].surname);
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }
