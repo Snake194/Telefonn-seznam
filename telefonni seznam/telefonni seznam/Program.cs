@@ -40,6 +40,10 @@ namespace telefonni_seznam
                 return -1;
             }
         }
+        static void end()
+        {
+            Console.ReadKey();
+        }
         static List<User> createUserListCopy(List<User> users)
         {
             var tempUsers = new List<User>();
@@ -101,17 +105,20 @@ namespace telefonni_seznam
 
                     case 2: // print USERS in origin order
                         printUserList(users);
+                        end();
                         break;
 
                     case 3: // sort by surname
                         List<User> tempUsers = createUserListCopy(users);
                         tempUsers.Sort((u1, u2) => u1.surname.CompareTo(u2.surname));
                         printUserList(tempUsers);
+                        end();
                         break;
                     case 4: // sort by number
                         List<User> tempnum = createUserListCopy(users);
                         tempnum.Sort((u1, u2) => u1.number.CompareTo(u2.number));
                         printUserList(tempnum);
+                        end();
                         break;
 
                     case 5: // search by surname
@@ -130,6 +137,7 @@ namespace telefonni_seznam
                                 print("Nalezen: " + findedUser.surname + " - " + findedUser.number);
                             }
                         }
+                        end();
                         break;
 
                     case 6: // search by surname
@@ -148,13 +156,14 @@ namespace telefonni_seznam
                                 print("Nalezeno: " + findedNum.number + " - " + findedNum.surname);
                             }
                         }
+                        end();
                         break;
 
                     default:
                         Console.WriteLine("Neznámý příkaz: {0}", menu);
+                        end();
                         break;
                 }
-                Console.ReadKey();
             } while (menu != 0);
             //Console.WriteLine(users[0].number + " - " + users[0].surname);
             //Console.ReadKey();
