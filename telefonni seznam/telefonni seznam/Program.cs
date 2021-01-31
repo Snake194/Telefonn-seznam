@@ -83,15 +83,19 @@ namespace telefonni_seznam
             var users = new List<User>();
             do
             {
-                Console.Clear();
+                //Console.Clear();
                 menu = menuVolba();
                 switch (menu)
                 {
+                    case 0:
+                        break;
                     case 1: // ADD USER
+                        { 
                         var u = new User();
                         u.number = inputNumber();
                         u.surname = inputSurname();
                         users.Add(u);
+                        }
                         break;
 
                     case 2: // print USERS in origin order
@@ -103,10 +107,28 @@ namespace telefonni_seznam
                         tempUsers.Sort((u1, u2) => u1.surname.CompareTo(u2.surname));
                         printUserList(tempUsers);
                         break;
-                    case 4:
+                    case 4: // sort by number
                         List<User> tempnum = createUserListCopy(users);
                         tempnum.Sort((u1, u2) => u1.number.CompareTo(u2.number));
                         printUserList(tempnum);
+                        break;
+
+                    case 5: // search by surname
+                        string surnameToFind = inputSurname();
+                        var findedUsers = from u in users
+                                     where u.surname == surnameToFind
+                                     select u;
+                        if (findedUsers.Count() < 1)
+                        {
+                            print("Uživatel nenalezen!");
+                        }
+                        else
+                        {
+                            foreach (var findedUser in findedUsers)
+                            {
+                                print("Nalezen: " + findedUser.surname + " - " + findedUser.number);
+                            }
+                        }
                         break;
 
                     default:
