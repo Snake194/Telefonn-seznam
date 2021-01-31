@@ -59,19 +59,19 @@ namespace telefonni_seznam
                 print(i + 1 + ". " + user.surname + ": " + user.number);
             }
         }
-        static string getNewName()
+        static string inputSurname()
         {
-            print("Zadejte jméno nového kontaktu:");
-            string newContact = Console.ReadLine();
-            return newContact;
+            print("Zadejte příjmení:");
+            string Contact = Console.ReadLine();
+            return Contact;
 
         }
 
-        static string getNewNumber()
+        static string inputNumber()
         {
-            print("Zadejte telefonní číslo kontaktu:");
-            string newNumber = Console.ReadLine();
-            return newNumber;
+            print("Zadejte telefonní číslo:");
+            string Number = Console.ReadLine();
+            return Number;
         }
         static void print(string StringToPrint = " ")
         {
@@ -89,8 +89,8 @@ namespace telefonni_seznam
                 {
                     case 1: // ADD USER
                         var u = new User();
-                        u.number = getNewNumber();
-                        u.surname = getNewName();
+                        u.number = inputNumber();
+                        u.surname = inputSurname();
                         users.Add(u);
                         break;
 
