@@ -78,13 +78,13 @@ namespace telefonni_seznam
             bool inputIsCorect = false;
             do
             {
-                print("Zadejte telefonní číslo:");
                 print("----------------------------------------------------------");
+                print("Zadejte telefonní číslo:");
                 Number = Console.ReadLine();
                 for (int i = 0; i < Number.Length; i++)
                 {
                     char c = Number[i];
-                    if (Char.IsDigit(c) == false)
+                    if ((Char.IsDigit(c) == false) && (Char.IsWhiteSpace(c) == false) && (c != '-') && (c != '+'))
                     {
                         print("Špatný vstup - očekávám číslo, zadej znovu.");
                         inputIsCorect = false;
