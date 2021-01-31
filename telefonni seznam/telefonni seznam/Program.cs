@@ -68,7 +68,7 @@ namespace telefonni_seznam
         {
             print("Zadejte příjmení:");
             string Contact = Console.ReadLine();
-            return Contact;
+            return Contact.Trim();
 
         }
 
@@ -96,7 +96,7 @@ namespace telefonni_seznam
                     }
                 }
             } while (!inputIsCorect);
-            return Number;
+            return Number.Trim();
         }
         static void print(string StringToPrint = " ")
         {
