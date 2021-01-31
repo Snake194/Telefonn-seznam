@@ -164,7 +164,7 @@ namespace telefonni_seznam
                     case 6: // search by surname
                         string numberToFind = inputNumber();
                         var findedNums = from u in users
-                                          where u.surname == numberToFind
+                                          where u.number == numberToFind
                                           select u;
                         if (findedNums.Count() < 1)
                         {
