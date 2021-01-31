@@ -120,6 +120,7 @@ namespace telefonni_seznam
                         u.number = inputNumber();
                         u.surname = inputSurname();
                         users.Add(u);
+                        print("Byl přidán uživatel: " + u.surname + " - " + u.number);
                         }
                         break;
 
