@@ -42,6 +42,7 @@ namespace telefonni_seznam
         }
         static void end()
         {
+            print("Stiskněte ENTER pro pokračování.");
             Console.ReadKey();
         }
         static List<User> createUserListCopy(List<User> users)
@@ -117,8 +118,8 @@ namespace telefonni_seznam
                     case 1: // ADD USER
                         { 
                         var u = new User();
-                        u.number = inputNumber();
                         u.surname = inputSurname();
+                        u.number = inputNumber();
                         users.Add(u);
                         print("Byl přidán uživatel: " + u.surname + " - " + u.number);
                         }
@@ -182,6 +183,7 @@ namespace telefonni_seznam
 
                     default:
                         Console.WriteLine("Neznámý příkaz: {0}", menu);
+                        
                         end();
                         break;
                 }
